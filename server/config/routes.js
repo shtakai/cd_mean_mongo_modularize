@@ -2,6 +2,8 @@
 const mongoose = require('mongoose');
 const Quote = mongoose.model('Quote');
 
+let quotes = require('../controllers/quotes.js');
+
 module.exports = function(app){
 
   app.get('/', function(req, res){
@@ -9,23 +11,11 @@ module.exports = function(app){
   })
 
   app.post('/quotes', function(req, res){
-    let quote = new Quote({
-      name: req.body.name,
-      quote: req.body.quote
-    });
-    quote.save(function(err){
-      if(err){
-        console.log('something went wrong');
-      } else{
-        res.redirect('/main');
-      }
-    });
+    quotes.create(req, res);
   })
 
   app.get('/main', function(req,res){
-    Quote.find({}, function(err,quotes){
-      res.render('main', {quotes: quotes})
-    });
+    quotes.show(req, res);
   })
 
 
