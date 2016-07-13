@@ -28,3 +28,11 @@ routes_setter(app);
 let server = app.listen(8000, function(){
   console.log('8000!');
 });
+
+let io = require('socket.io').listen(server);
+io.on('connection', sockets =>{
+  console.log('connection')
+  sockets.on('test', data => {
+    console.log('test', data);
+  })
+})
