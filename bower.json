@@ -1,0 +1,23 @@
+{
+  "name": "modularize",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Alyson Takai <shtakai@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/shtakai/cd_mean_mongo_modularize",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "normalize-css": "normalize.css#^4.2.0"
+  }
+}
