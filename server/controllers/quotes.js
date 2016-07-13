@@ -4,7 +4,9 @@ const Quote = mongoose.model('Quote');
 
 module.exports = {
   show: function(req, res){
-    Quote.find({}, function(err,quotes){
+    Quote.find({}).
+      sort({created_at: -1}).
+      exec( function(err,quotes){
       res.render('main', {quotes: quotes})
     });
   },
