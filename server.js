@@ -7,10 +7,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:true}));
 
 // static content
-app.use(express.static(path.join(__dirname, './static')));
+app.use(express.static(path.join(__dirname, './client/static')));
 
 // setting up ejs and our viwes folder
-app.set('views', path.join(__dirname, './views'));
+app.set('views', path.join(__dirname, './client/views'));
 app.set('view engine', 'ejs');
 
 // require the mongoose configuration file
